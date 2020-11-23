@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:plant_app/constants.dart' as Constants;
+import 'package:plant_app/screens/home/components/recommended_plants.dart';
 import 'header_with_search.dart';
 import 'package:plant_app/components/title_with_more_button.dart';
 
@@ -15,7 +16,8 @@ class HomeBody extends StatelessWidget {
           TitleWithMoreButton(
             title: 'Recommended',
             onPressed: () {},
-          )
+          ),
+          RecommendedPlants(),
         ],
       ),
     );
