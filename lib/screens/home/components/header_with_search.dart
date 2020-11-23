@@ -14,6 +14,9 @@ class HeaderWithSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(
+        bottom: Constants.DEFAULT_PADDING * 2.5,
+      ),
       height: size.height * 0.2,
       child: Stack(children: <Widget>[
         Container(
