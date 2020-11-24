@@ -8,8 +8,11 @@ class ImageIconsCard extends StatelessWidget {
   const ImageIconsCard({
     Key key,
     this.size,
+    this.image,
   }) : super(key: key);
+
   final Size size;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +68,7 @@ class ImageIconsCard extends StatelessWidget {
                 image: DecorationImage(
                   alignment: Alignment.centerLeft,
                   fit: BoxFit.cover,
-                  image: AssetImage("assets/images/img.png"),
+                  image: AssetImage(image),
                 ),
               ),
             ),

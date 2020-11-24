@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:plant_app/components/recommended_plant_card.dart';
+import 'package:plant_app/data/plants_mock.dart';
 import 'package:plant_app/screens/details/details_screen.dart';
 
 class RecommendedPlants extends StatelessWidget {
@@ -13,50 +14,24 @@ class RecommendedPlants extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: [
-          RecommendedPlantCard(
-            image: "assets/images/image_1.png",
-            title: "Almond",
-            country: "Japan",
-            price: 360,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
-                ),
-              );
-            },
-          ),
-          RecommendedPlantCard(
-            image: "assets/images/image_2.png",
-            title: "Alyssium",
-            country: "Japan",
-            price: 330,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
-                ),
-              );
-            },
-          ),
-          RecommendedPlantCard(
-            image: "assets/images/image_3.png",
-            title: "Ambassador",
-            country: "Japan",
-            price: 380,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
-                ),
-              );
-            },
-          ),
-        ],
+        children: recommendedPlantsMock
+            .map(
+              (plant) => RecommendedPlantCard(
+                image: plant.image,
+                title: plant.title,
+                country: plant.country,
+                price: plant.price,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailsScreen(plant: plant),
+                    ),
+                  );
+                },
+              ),
+            )
+            .toList(),
       ),
     );
   }
