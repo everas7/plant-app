@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:plant_app/components/recommended_plant_card.dart';
+import 'package:plant_app/screens/details/details_screen.dart';
 
 class RecommendedPlants extends StatelessWidget {
   const RecommendedPlants({
@@ -18,21 +19,42 @@ class RecommendedPlants extends StatelessWidget {
             title: "Almond",
             country: "Japan",
             price: 360,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
           RecommendedPlantCard(
             image: "assets/images/image_2.png",
             title: "Alyssium",
             country: "Japan",
             price: 330,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
           RecommendedPlantCard(
             image: "assets/images/image_3.png",
             title: "Ambassador",
             country: "Japan",
             price: 380,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),
