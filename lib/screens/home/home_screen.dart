@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'components/home_body.dart';
+import 'package:plant_app/components/bottom_nav_bar.dart';
+import 'package:plant_app/constants.dart' as Constants;
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -9,6 +11,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(),
       body: HomeBody(),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 
